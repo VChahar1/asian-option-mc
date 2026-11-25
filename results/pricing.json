@@ -1,0 +1,21 @@
+{
+  "parameters": {
+    "S0": 100,
+    "K": 100,
+    "T": 1.0,
+    "r": 0.05,
+    "sigma": 0.2,
+    "n_steps": 50,
+    "n_paths": 100000,
+    "seed": 0
+  },
+  "result": {
+    "price": 5.8572040171698205,
+    "stderr": 0.0007057914643811394,
+    "plain_price": 5.848113667540121,
+    "plain_stderr": 0.02550521002373005,
+    "control_coefficient": 1.0343003150644206,
+    "variance_reduction_factor": 1305.8852138732323,
+    "method": "control_variate"
+  }
+}

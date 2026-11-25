@@ -12,7 +12,7 @@ def geometric_asian_call_closed_form(
     sigma: float,
     n_steps: int,
 ) -> float:
-
+    """Price a discretely sampled geometric-average call under GBM."""
     sigma_g = sigma * np.sqrt((n_steps + 1) * (2 * n_steps + 1) / (6 * n_steps**2))
     mu_g = (r - 0.5 * sigma**2) * (n_steps + 1) / (2 * n_steps) + 0.5 * sigma_g**2
 
@@ -33,7 +33,7 @@ def simulate_average_paths(
     n_paths: int,
     seed: int | None = None,
 ) -> tuple[np.ndarray, np.ndarray]:
-
+    """Simulate arithmetic and geometric averages with antithetic GBM paths."""
     rng = np.random.default_rng(seed)
     dt = T / n_steps
     drift = (r - 0.5 * sigma**2) * dt
@@ -63,7 +63,7 @@ def price_arithmetic_asian(
     seed: int | None = None,
     use_control_variate: bool = True,
 ) -> dict:
-
+    """Estimate an arithmetic-average call, optionally using a geometric control."""
     arith_avg, geo_avg = simulate_average_paths(S0, T, r, sigma, n_steps, n_paths, seed)
     disc = np.exp(-r * T)
 
