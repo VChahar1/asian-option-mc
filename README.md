@@ -5,13 +5,13 @@ Pricing arithmetic-average Asian options by Monte Carlo, using the geometric-ave
 
 ## Quick start
 
-​```bash
+```bash
 python -m venv .venv && source .venv/bin/activate
 pip install -r requirements.txt
 python -m src.asian          # prints the pricing comparison
 python -m src.make_figure    # regenerates the convergence figure
 pytest -v                    # 4 tests
-​```
+```
 
 ## Verification
 
