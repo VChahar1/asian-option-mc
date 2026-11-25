@@ -12,10 +12,12 @@ def main() -> None:
 
     plain_se, cv_se = [], []
     for n in path_counts:
-        p = price_arithmetic_asian(**params, n_paths=n, seed=0,
-                                   use_control_variate=False)
-        c = price_arithmetic_asian(**params, n_paths=n, seed=0,
-                                   use_control_variate=True)
+        p = price_arithmetic_asian(
+            **params, n_paths=n, seed=0, use_control_variate=False
+        )
+        c = price_arithmetic_asian(
+            **params, n_paths=n, seed=0, use_control_variate=True
+        )
         plain_se.append(p["stderr"])
         cv_se.append(c["stderr"])
 
